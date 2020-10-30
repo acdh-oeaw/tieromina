@@ -39,6 +39,7 @@ import { HomeComponent } from './home/home.component';
 import { TeamComponent } from './team/team.component';
 import { AboutComponent } from './about/about.component';
 import { QuizComponent } from './quiz/quiz.component';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -61,7 +62,7 @@ import { QuizComponent } from './quiz/quiz.component';
     MatMenuModule,
     MatSidenavModule,
     MatToolbarModule,
-
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
