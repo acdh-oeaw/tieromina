@@ -13,8 +13,8 @@
             {{opt}}
           </mat-list-option>
         </mat-selection-list>
-      <mat-action-row>
-        <button mat-button color="primary" (click)="submitAnswer(currentQ)" [disabled]="!answer.selectedOptions.selected[0]?.value">Next</button>
+      <mat-action-row *ngIf="!answered[i]">
+        <button mat-button color="primary" (click)="submitAnswer(i)" [disabled]="!answer.selectedOptions.selected[0]?.value">Next</button>
       </mat-action-row>
   </mat-expansion-panel>
   </mat-accordion>

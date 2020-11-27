@@ -15,7 +15,7 @@ export class QuizComponent implements OnInit {
   selectedAnswer: string[];
   score: number = 0;
   step: number = 0;
-
+  answered: boolean[] = [false, false, false, false, false]
   constructor(private omenService: OmenService,
               ) { }
 
@@ -24,15 +24,7 @@ export class QuizComponent implements OnInit {
     this.step = index;
   }
 
-  nextStep() {
-    console.log("Next step ", this.step+1);
-    this.step++;
-  }
 
-  prevStep() {
-    console.log("Prev step ", this.step-1);
-    this.step--;
-  }
 
   getOmens(): void {
     this.omenService.getOmens()
@@ -45,6 +37,7 @@ export class QuizComponent implements OnInit {
   }
   submitAnswer(currentStep): void{
     console.log(currentStep);
+    this.answered[currentStep] = true;
     if(this.selectedAnswer[0]==this.omens[this.currentQ].apodosis){
       this.score = this.score + 1;
     }
@@ -52,7 +45,7 @@ export class QuizComponent implements OnInit {
       //
     }
     console.log("LOGGING", this.currentQ, this.selectedAnswer[0]);
-    this.currentQ = this.currentQ + 1;
+    this.currentQ = Math.min(this.currentQ + 1, this.numQuestions);
   }
 
   ngOnInit(): void {
@@ -63,5 +56,6 @@ export class QuizComponent implements OnInit {
     this.currentQ = 0;
     this.selectedAnswer = [];
     this.score = 0;
+    this.answered = [false, false, false, false, false];
   }
 }
