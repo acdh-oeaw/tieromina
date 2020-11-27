@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1606485616438,
+  "timestamp": 1606492679498,
   "index": "/tieromina/index.html",
   "assetGroups": [
     {
@@ -13,7 +13,7 @@
       "urls": [
         "/tieromina/favicon.ico",
         "/tieromina/index.html",
-        "/tieromina/main.abef22c9e983712c8f97.js",
+        "/tieromina/main.4953e9f61f3a18c9c06a.js",
         "/tieromina/manifest.webmanifest",
         "/tieromina/polyfills.a4021de53358bb0fec14.js",
         "/tieromina/runtime.e227d1a0e31cbccbf8ec.js",
@@ -68,8 +68,8 @@
     "/tieromina/assets/orientalistik.jpg": "8b83d25082745fe461bac1efff7ad65eb31e657f",
     "/tieromina/assets/univie.jpg": "57ac7f64c416e021ddb5565eb604850658985ab3",
     "/tieromina/favicon.ico": "22f6a4a3bcaafafb0254e0f2fa4ceb89e505e8b2",
-    "/tieromina/index.html": "8890c20b5504c79cea850087aa33b1cac2798b0a",
-    "/tieromina/main.abef22c9e983712c8f97.js": "b9e31e4c19c84348ee94a26ec7f689b32aebe86e",
+    "/tieromina/index.html": "c8361a2f3fc9bb11db1725aab4b13aacb6d54fb5",
+    "/tieromina/main.4953e9f61f3a18c9c06a.js": "b63b6f260b1bf561f398975102dc0b42ca8de55f",
     "/tieromina/manifest.webmanifest": "b0161999dda7c98ca5458eacaa12f19622285338",
     "/tieromina/polyfills.a4021de53358bb0fec14.js": "b47435a9ef2a4829f2f9dfd35599bde3614981b1",
     "/tieromina/runtime.e227d1a0e31cbccbf8ec.js": "a9aafcf49f49145093fc831efd9b8e2f6c71bb9c",
