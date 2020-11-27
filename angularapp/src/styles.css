@@ -1,0 +1,28 @@
+/* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif;
+       /* Disables pull-to-refresh but allows overscroll glow effects. */
+       overscroll-behavior-y: contain;
+}
+footer {
+  max-height: 5em;
+  text-align: center;
+  width: 100%;
+  padding: 0.2em;
+
+}
+
+
+.spacer {
+  flex: 1 1 auto;
+}
+main{
+  width : 100%
+}
+@media (min-width: 993px){
+  main {
+    width: 75%;
+    margin: auto;
+  }
+}

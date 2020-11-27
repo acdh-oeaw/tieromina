@@ -1,0 +1,11 @@
+footer img{
+  object-fit: contain;
+  max-height: 100%;
+  max-width:20%;
+  margin-left: 0.5em;
+  margin-right: 0.5em;
+}
+
+.contents{
+  padding: 2em;
+}

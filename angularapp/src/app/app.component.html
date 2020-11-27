@@ -1,0 +1,23 @@
+<div fxFlexFill fxLayout="column">
+  <mat-toolbar  fxFlex="none">
+    <a mat-button   routerLink="/">{{title}}</a>
+    <span class="spacer"></span>
+         <button mat-icon-button color="accent"  aria-label="Share">
+         <mat-icon>share</mat-icon>
+         </button>
+  </mat-toolbar>
+  <main  role="main" class="" fxFlex >
+    <div flex class="contents">
+      <router-outlet></router-outlet>
+    </div>
+  </main>
+  <footer class="page-footer font-small" fxLayout="row" fxLayoutGap	="2em" fxLayoutAlign="center">
+    <img src="../assets/OEAW_Logo_cmyk.jpg"   alt="">
+    <img src="../assets/acdh-ch-logo96.png"    alt="">
+    <img src="../assets/orientalistik.jpg"    alt="">
+    <img src="../assets/univie.jpg"    alt="">
+    <!-- <div class="footer-copyright py-3  text-center">
+         © {{currentYear}} Copyright:
+         </div> -->
+  </footer>
+</div>

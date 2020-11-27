@@ -1,0 +1,23 @@
+<!-- <ul>
+     <li *ngFor="let omen of omens" fxFlexAlign="stretch">
+     {{omen.protasis }} - {{ omen.apodosis }}
+     </li>
+     </ul> -->
+
+<mat-horizontal-stepper linear #stepper labelPosition="bottom" >
+  <mat-step [stepControl]="quizFormGroup" *ngFor="let omen of omens" editable="false">
+    <form  [formGroup]="quizFormGroup">
+      {{ omen.protasis }} &ndash;	 {{ omen.apodosis }}
+      <div>
+        <ng-template matStepLabel></ng-template>
+        <mat-button-toggle-group  name="fontStyle" aria-label="Font Style"  vertical="true"
+          #answer="matButtonToggleGroup">
+          <mat-button-toggle value="{{opt}}"  *ngFor="let opt of omen.options" >{{opt}}</mat-button-toggle>
+          </mat-button-toggle-group>
+          <div class="transition">
+            <button mat-button matStepperNext [disabled]="!answer.value" >Next</button>
+        </div>
+      </div>
+    </form>
+  </mat-step>
+</mat-horizontal-stepper>

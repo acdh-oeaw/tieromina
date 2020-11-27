@@ -1,0 +1,21 @@
+form{
+  margin-top:1em;
+  min-width:70%;
+
+}
+mat-button-toggle-group{
+  margin-top:1em;
+  width: 100%;
+}
+
+.transition{
+  width:100%;
+}
+
+.transition button{
+  text-align: end;
+}
+
+mat-button-toggle {
+  flex-wrap: wrap !important;
+}
