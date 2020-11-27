@@ -1,0 +1,96 @@
+{
+  "configVersion": 1,
+  "timestamp": 1606485616438,
+  "index": "/tieromina/index.html",
+  "assetGroups": [
+    {
+      "name": "app",
+      "installMode": "prefetch",
+      "updateMode": "prefetch",
+      "cacheQueryOptions": {
+        "ignoreVary": true
+      },
+      "urls": [
+        "/tieromina/favicon.ico",
+        "/tieromina/index.html",
+        "/tieromina/main.abef22c9e983712c8f97.js",
+        "/tieromina/manifest.webmanifest",
+        "/tieromina/polyfills.a4021de53358bb0fec14.js",
+        "/tieromina/runtime.e227d1a0e31cbccbf8ec.js",
+        "/tieromina/styles.febfdba777e0cb3d3c0b.css"
+      ],
+      "patterns": []
+    },
+    {
+      "name": "assets",
+      "installMode": "lazy",
+      "updateMode": "prefetch",
+      "cacheQueryOptions": {
+        "ignoreVary": true
+      },
+      "urls": [
+        "/tieromina/assets/ERN 2020 _ Bestiarium Mesopotamicum.pdf",
+        "/tieromina/assets/OEAW_Logo_cmyk.jpg",
+        "/tieromina/assets/acdh-ch-logo96.png",
+        "/tieromina/assets/icons/icon-128x128.png",
+        "/tieromina/assets/icons/icon-144x144.png",
+        "/tieromina/assets/icons/icon-152x152.png",
+        "/tieromina/assets/icons/icon-192x192.png",
+        "/tieromina/assets/icons/icon-384x384.png",
+        "/tieromina/assets/icons/icon-512x512.png",
+        "/tieromina/assets/icons/icon-72x72.png",
+        "/tieromina/assets/icons/icon-96x96.png",
+        "/tieromina/assets/logo-kurz.png",
+        "/tieromina/assets/omens.csv",
+        "/tieromina/assets/omens.json",
+        "/tieromina/assets/orientalistik.jpg",
+        "/tieromina/assets/univie.jpg"
+      ],
+      "patterns": []
+    }
+  ],
+  "dataGroups": [],
+  "hashTable": {
+    "/tieromina/assets/ERN 2020 _ Bestiarium Mesopotamicum.pdf": "728e5fa656ff240c5f2c9288f63af71fdd765718",
+    "/tieromina/assets/OEAW_Logo_cmyk.jpg": "84ce0f06ab54c9e51a0cc31125c9ba28ceeaba85",
+    "/tieromina/assets/acdh-ch-logo96.png": "4c27b9e51fb5d0b18fe348c874fd966f9a0eed38",
+    "/tieromina/assets/icons/icon-128x128.png": "dae3b6ed49bdaf4327b92531d4b5b4a5d30c7532",
+    "/tieromina/assets/icons/icon-144x144.png": "b0bd89982e08f9bd2b642928f5391915b74799a7",
+    "/tieromina/assets/icons/icon-152x152.png": "7479a9477815dfd9668d60f8b3b2fba709b91310",
+    "/tieromina/assets/icons/icon-192x192.png": "1abd80d431a237a853ce38147d8c63752f10933b",
+    "/tieromina/assets/icons/icon-384x384.png": "329749cd6393768d3131ed6304c136b1ca05f2fd",
+    "/tieromina/assets/icons/icon-512x512.png": "559d9c4318b45a1f2b10596bbb4c960fe521dbcc",
+    "/tieromina/assets/icons/icon-72x72.png": "c457e56089a36952cd67156f9996bc4ce54a5ed9",
+    "/tieromina/assets/icons/icon-96x96.png": "3914125a4b445bf111c5627875fc190f560daa41",
+    "/tieromina/assets/logo-kurz.png": "5c4529113b240a90c00b0b346f1e08e7baeac0e5",
+    "/tieromina/assets/omens.csv": "84681242eca7c7a77063c534d7725194e9d85511",
+    "/tieromina/assets/omens.json": "8ed0651872217e195a3738bb27c2916b75276c59",
+    "/tieromina/assets/orientalistik.jpg": "8b83d25082745fe461bac1efff7ad65eb31e657f",
+    "/tieromina/assets/univie.jpg": "57ac7f64c416e021ddb5565eb604850658985ab3",
+    "/tieromina/favicon.ico": "22f6a4a3bcaafafb0254e0f2fa4ceb89e505e8b2",
+    "/tieromina/index.html": "8890c20b5504c79cea850087aa33b1cac2798b0a",
+    "/tieromina/main.abef22c9e983712c8f97.js": "b9e31e4c19c84348ee94a26ec7f689b32aebe86e",
+    "/tieromina/manifest.webmanifest": "b0161999dda7c98ca5458eacaa12f19622285338",
+    "/tieromina/polyfills.a4021de53358bb0fec14.js": "b47435a9ef2a4829f2f9dfd35599bde3614981b1",
+    "/tieromina/runtime.e227d1a0e31cbccbf8ec.js": "a9aafcf49f49145093fc831efd9b8e2f6c71bb9c",
+    "/tieromina/styles.febfdba777e0cb3d3c0b.css": "801ba567dd6d292d7959fe994610809ff4e9e9f5"
+  },
+  "navigationUrls": [
+    {
+      "positive": true,
+      "regex": "^\\/.*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*\\.[^/]*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*__[^/]*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*__[^/]*\\/.*$"
+    }
+  ]
+}
