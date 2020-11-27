@@ -1,26 +1,24 @@
 <div #quiz>
-  <mat-horizontal-stepper linear #stepper labelPosition="bottom" >
-    <mat-step  *ngFor="let omen of omens" editable="false" #currentStep>
-      <form >
-        {{ omen.protasis }} &ndash;
-        <div>
-          <ng-template matStepLabel></ng-template>
-          <mat-selection-list #answer [multiple]="false" [(ngModel)]="selectedAnswer" [ngModelOptions]="{standalone: true}">
-            <mat-list-option *ngFor="let opt of omen.options" [value]="opt">
-              {{opt}}
-            </mat-list-option>
-          </mat-selection-list>
-          <div class="transition">
-            <button mat-button matStepperNext [disabled]="!answer.selectedOptions.selected[0]?.value"
-              (click)="submitAnswer(currentStep)">
-              Submit
-            </button>
-          </div>
+  <mat-accordion>
 
-        </div>
-      </form>
-    </mat-step>
-  </mat-horizontal-stepper>
+    <mat-expansion-panel [expanded]="currentQ === i" hideToggle  *ngFor="let omen of omens ; let i = index"
+      [attr.data-index]="i" (opened)="setStep(i)">
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          {{ omen.protasis }} &ndash;
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+      <mat-selection-list #answer [multiple]="false" [(ngModel)]="selectedAnswer" [ngModelOptions]="{standalone: true}">
+          <mat-list-option *ngFor="let opt of omen.options" [value]="opt">
+            {{opt}}
+          </mat-list-option>
+        </mat-selection-list>
+
+      <mat-action-row>
+        <button mat-button color="primary" (click)="submitAnswer(currentQ)" [disabled]="!answer.selectedOptions.selected[0]?.value">Next</button>
+      </mat-action-row>
+  </mat-expansion-panel>
+  </mat-accordion>
 </div>
 <div #results *ngIf="currentQ>=numQuestions">
   You scored {{ score }} / {{ numQuestions }}!

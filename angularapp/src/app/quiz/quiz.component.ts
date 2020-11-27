@@ -14,8 +14,25 @@ export class QuizComponent implements OnInit {
   currentQ: number = 0;
   selectedAnswer: string[];
   score: number = 0;
+  step: number = 0;
+
   constructor(private omenService: OmenService,
               ) { }
+
+  setStep(index: number) {
+    console.log("Setting step ", index);
+    this.step = index;
+  }
+
+  nextStep() {
+    console.log("Next step ", this.step+1);
+    this.step++;
+  }
+
+  prevStep() {
+    console.log("Prev step ", this.step-1);
+    this.step--;
+  }
 
   getOmens(): void {
     this.omenService.getOmens()
@@ -32,9 +49,9 @@ export class QuizComponent implements OnInit {
       this.score = this.score + 1;
     }
     else{
-      currentStep.hasError=true;
+      //
     }
-    console.log("LOGGING", this.currentQ, this.selectedAnswer[0], currentStep.hasError);
+    console.log("LOGGING", this.currentQ, this.selectedAnswer[0]);
     this.currentQ = this.currentQ + 1;
   }
 
