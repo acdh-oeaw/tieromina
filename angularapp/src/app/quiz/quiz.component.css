@@ -39,7 +39,11 @@ mat-expansion-panel-header{
 
 
 .correct{
-  background:aquamarine !important;
+  background:mediumaquamarine !important;
+}
+
+.incorrect{
+  background:tomato !important;
 }
 
 
