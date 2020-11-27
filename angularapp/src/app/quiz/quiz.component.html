@@ -4,12 +4,12 @@
       [attr.data-index]="i" (opened)="setStep(i)">
       <mat-expansion-panel-header>
         <mat-panel-title>
-          {{ omen.protasis }} &ndash; <span class="apodosis">{{answered[i]}}</span>
+          {{ omen.protasis }} <span class="apodosis">{{answered[i]}}</span>
         </mat-panel-title>
       </mat-expansion-panel-header>
       <mat-selection-list #answer [multiple]="false" [(ngModel)]="selectedAnswer" >
         <mat-list-option *ngFor="let opt of omen.options" [value]="opt"
-          [selected]="answered[i] === opt" [ngClass]="{'correct': (showCorrectAnswers && omen.apodosis === opt)}">
+          [selected]="answered[i] === opt" [ngClass]="{'correct': (showCorrectAnswers && omen.apodosis === opt), 'incorrect': (showCorrectAnswers && omen.apodosis != opt && answered[i] === opt)}">
           {{opt}}
           </mat-list-option>
         </mat-selection-list>

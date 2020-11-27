@@ -23,7 +23,6 @@ export class QuizComponent implements OnInit {
               ) { }
 
   setStep(index: number) {
-    console.log("Setting step ", index);
     this.step = index;
   }
 
@@ -42,7 +41,6 @@ export class QuizComponent implements OnInit {
       });
   }
   submitAnswer(currentStep): void{
-    console.log(currentStep);
     this.answered[currentStep] = this.selectedAnswer[0];
     if(this.selectedAnswer[0]==this.omens[this.currentQ].apodosis){
       this.score = this.score + 1;
@@ -50,7 +48,6 @@ export class QuizComponent implements OnInit {
     else{
       //
     }
-    console.log(this.answered);
     this.currentQ = Math.min(this.currentQ + 1, this.numQuestions);
   }
 
@@ -63,5 +60,7 @@ export class QuizComponent implements OnInit {
     this.selectedAnswer = [];
     this.score = 0;
     this.answered = ['', '', '', '', '', ''];
+    this.showCorrectAnswers = false;
+
   }
 }
