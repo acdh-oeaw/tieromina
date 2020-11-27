@@ -1,13 +1,15 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild  } from '@angular/core';
 import { Omen } from '../omen';
 import { OmenService } from '../omen.service';
-
+import {MatAccordion} from '@angular/material/expansion';
 @Component({
   selector: 'app-quiz',
   templateUrl: './quiz.component.html',
   styleUrls: ['./quiz.component.css']
 })
 export class QuizComponent implements OnInit {
+  @ViewChild(MatAccordion) accordion: MatAccordion;
+
   omens: Omen[];
   indices: number[];
   numQuestions: number =6 ;
