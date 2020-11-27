@@ -18,6 +18,7 @@ export class QuizComponent implements OnInit {
   score: number = 0;
   step: number = 0;
   answered: string[] = ['', '', '', '', '', ''];
+  showCorrectAnswers = false;
   constructor(private omenService: OmenService,
               ) { }
 
@@ -26,8 +27,11 @@ export class QuizComponent implements OnInit {
     this.step = index;
   }
 
+  learnMore(){
+    this.showCorrectAnswers = true;
+    this.accordion.openAll();
 
-
+  }
   getOmens(): void {
     this.omenService.getOmens()
       .subscribe(omens => {
@@ -46,7 +50,7 @@ export class QuizComponent implements OnInit {
     else{
       //
     }
-    console.log("LOGGING", this.currentQ, this.selectedAnswer[0]);
+    console.log(this.answered);
     this.currentQ = Math.min(this.currentQ + 1, this.numQuestions);
   }
 

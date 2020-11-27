@@ -39,5 +39,10 @@ mat-expansion-panel-header{
 
 
 .correct{
-  background:
+  background:aquamarine !important;
+}
+
+
+.apodosis{
+  font-style: italic;
 }

@@ -4,12 +4,13 @@
       [attr.data-index]="i" (opened)="setStep(i)">
       <mat-expansion-panel-header>
         <mat-panel-title>
-          {{ omen.protasis }} &ndash;
+          {{ omen.protasis }} &ndash; <span class="apodosis">{{answered[i]}}</span>
         </mat-panel-title>
       </mat-expansion-panel-header>
-      <mat-selection-list #answer [multiple]="false" [(ngModel)]="selectedAnswer" [ngModelOptions]="{standalone: true}">
-          <mat-list-option *ngFor="let opt of omen.options" [value]="opt">
-            {{opt}}
+      <mat-selection-list #answer [multiple]="false" [(ngModel)]="selectedAnswer" >
+        <mat-list-option *ngFor="let opt of omen.options" [value]="opt"
+          [selected]="answered[i] === opt" [ngClass]="{'correct': (showCorrectAnswers && omen.apodosis === opt)}">
+          {{opt}}
           </mat-list-option>
         </mat-selection-list>
       <mat-action-row *ngIf="answered[i] === ''">
@@ -21,7 +22,7 @@
 <div #results *ngIf="currentQ>=numQuestions" class="results">
   <h4 class="mat-display-1"> You scored {{ score }} / {{ numQuestions }}!</h4>
   <div class="action-row">
-    <button mat-button color="primary"  (click)="accordion.openAll()">Learn More! </button>
+    <button mat-button color="primary"  (click)="learnMore()">Learn More! </button>
     <button mat-button color="primary" routerLink="/quiz" (click)="restart()">Play Again! </button>
   </div>
 </div>
