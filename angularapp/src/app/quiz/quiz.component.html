@@ -4,7 +4,7 @@
       [attr.data-index]="i" (opened)="setStep(i)">
       <mat-expansion-panel-header>
         <mat-panel-title>
-          {{ omen.protasis }} <span class="apodosis">{{answered[i]}}</span>
+          {{ omen.protasis }} &#8230;
         </mat-panel-title>
       </mat-expansion-panel-header>
       <mat-selection-list #answer [multiple]="false" [(ngModel)]="selectedAnswer" >
