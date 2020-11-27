@@ -15,7 +15,7 @@ export class QuizComponent implements OnInit {
   selectedAnswer: string[];
   score: number = 0;
   step: number = 0;
-  answered: boolean[] = [false, false, false, false, false]
+  answered: string[] = ['', '', '', '', '', ''];
   constructor(private omenService: OmenService,
               ) { }
 
@@ -37,7 +37,7 @@ export class QuizComponent implements OnInit {
   }
   submitAnswer(currentStep): void{
     console.log(currentStep);
-    this.answered[currentStep] = true;
+    this.answered[currentStep] = this.selectedAnswer[0];
     if(this.selectedAnswer[0]==this.omens[this.currentQ].apodosis){
       this.score = this.score + 1;
     }
@@ -56,6 +56,6 @@ export class QuizComponent implements OnInit {
     this.currentQ = 0;
     this.selectedAnswer = [];
     this.score = 0;
-    this.answered = [false, false, false, false, false];
+    this.answered = ['', '', '', '', '', ''];
   }
 }
