@@ -1,4 +1,4 @@
-<div #quiz *ngIf="currentQ<numQuestions, else results" >
+<div #quiz>
   <mat-horizontal-stepper linear #stepper labelPosition="bottom" >
     <mat-step  *ngFor="let omen of omens" editable="false" #currentStep>
       <form >
@@ -22,12 +22,10 @@
     </mat-step>
   </mat-horizontal-stepper>
 </div>
-<ng-template #results>
+<div #results *ngIf="currentQ>=numQuestions">
   You scored {{ score }} / {{ numQuestions }}!
   <div>
     <button mat-button color="primary" routerLink="/home" (click)="restart()">Learn More! </button>
     <button mat-button color="primary" routerLink="/quiz" (click)="restart()">Play Again! </button>
   </div>
-
-
-</ng-template>
+</div>
