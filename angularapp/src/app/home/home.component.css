@@ -1,0 +1,9 @@
+.presentation{
+  width:100%;
+}
+
+.presentation iframe{
+  display:block;
+  margin: 0 auto;
+
+}

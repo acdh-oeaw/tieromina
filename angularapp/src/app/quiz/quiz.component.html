@@ -1,23 +1,33 @@
-<!-- <ul>
-     <li *ngFor="let omen of omens" fxFlexAlign="stretch">
-     {{omen.protasis }} - {{ omen.apodosis }}
-     </li>
-     </ul> -->
+<div #quiz *ngIf="currentQ<numQuestions, else results" >
+  <mat-horizontal-stepper linear #stepper labelPosition="bottom" >
 
-<mat-horizontal-stepper linear #stepper labelPosition="bottom" >
-  <mat-step [stepControl]="quizFormGroup" *ngFor="let omen of omens" editable="false">
-    <form  [formGroup]="quizFormGroup">
-      {{ omen.protasis }} &ndash;	 {{ omen.apodosis }}
-      <div>
-        <ng-template matStepLabel></ng-template>
-        <mat-button-toggle-group  name="fontStyle" aria-label="Font Style"  vertical="true"
-          #answer="matButtonToggleGroup">
-          <mat-button-toggle value="{{opt}}"  *ngFor="let opt of omen.options" >{{opt}}</mat-button-toggle>
-          </mat-button-toggle-group>
+
+    <mat-step  *ngFor="let omen of omens" editable="false" #currentStep>
+      <form >
+        {{ omen.protasis }} &ndash;
+        <div>
+          <ng-template matStepLabel></ng-template>
+          <mat-selection-list #answer [multiple]="false" [(ngModel)]="selectedAnswer" [ngModelOptions]="{standalone: true}">
+            <mat-list-option *ngFor="let opt of omen.options" [value]="opt">
+              {{opt}}
+            </mat-list-option>
+          </mat-selection-list>
           <div class="transition">
-            <button mat-button matStepperNext [disabled]="!answer.value" >Next</button>
+            <button mat-button matStepperNext [disabled]="!answer.selectedOptions.selected[0]?.value"
+              (click)="submitAnswer(currentStep)">
+              Submit
+            </button>
+          </div>
+
         </div>
-      </div>
-    </form>
-  </mat-step>
-</mat-horizontal-stepper>
+      </form>
+    </mat-step>
+  </mat-horizontal-stepper>
+</div>
+<ng-template #results>
+  {{ score }} / {{ numQuestions }}
+
+  <div>
+    <button mat-button routerLink="/home" (click)="restart()">Learn More! </button>
+  </div>
+</ng-template>

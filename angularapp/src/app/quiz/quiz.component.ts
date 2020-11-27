@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Omen } from '../omen';
 import { OmenService } from '../omen.service';
-import {FormBuilder, FormGroup, FormControl, Validators} from '@angular/forms';
 
 @Component({
   selector: 'app-quiz',
@@ -11,10 +10,12 @@ import {FormBuilder, FormGroup, FormControl, Validators} from '@angular/forms';
 export class QuizComponent implements OnInit {
   omens: Omen[];
   indices: number[];
-  quizFormGroup: FormGroup;
-
+  numQuestions: number =6 ;
+  currentQ: number = 0;
+  selectedAnswer: string[];
+  score: number = 0;
   constructor(private omenService: OmenService,
-              private _formBuilder: FormBuilder) { }
+              ) { }
 
   getOmens(): void {
     this.omenService.getOmens()
@@ -22,30 +23,28 @@ export class QuizComponent implements OnInit {
         this.omens = omens
           .map((a) => ({sort: Math.random(), value: a}))
           .sort((a, b) => a.sort - b.sort)
-          .map((a) => a.value).slice(0, 6);
+          .map((a) => a.value).slice(0, this.numQuestions);
       });
+  }
+  submitAnswer(currentStep): void{
+    console.log(currentStep);
+    if(this.selectedAnswer[0]==this.omens[this.currentQ].apodosis){
+      this.score = this.score + 1;
+    }
+    else{
+      currentStep.hasError=true;
+    }
+    console.log("LOGGING", this.currentQ, this.selectedAnswer[0], currentStep.hasError);
+    this.currentQ = this.currentQ + 1;
   }
 
   ngOnInit(): void {
-    this.quizFormGroup = this._formBuilder.group(
-      {
-        quizCtrl: new FormControl()
-
-      }
-    );
-
     this.getOmens();
   }
+  restart(): void{
+    this.getOmens();
+    this.currentQ = 0;
+    this.selectedAnswer = [];
+    this.score = 0;
+  }
 }
-
-/*
-  <div [formGroup]="myGroup">
-  <input formControlName="firstName">
-  </div>
-
-  In your class:
-
-  this.myGroup = new FormGroup({
-  firstName: new FormControl()
-  });
-  */
