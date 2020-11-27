@@ -37,15 +37,3 @@ export class QuizComponent implements OnInit {
     this.getOmens();
   }
 }
-
-/*
-  <div [formGroup]="myGroup">
-  <input formControlName="firstName">
-  </div>
-
-  In your class:
-
-  this.myGroup = new FormGroup({
-  firstName: new FormControl()
-  });
-  */
