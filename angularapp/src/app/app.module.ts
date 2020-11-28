@@ -44,13 +44,15 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { QuizComponent } from './quiz/quiz.component';
 import { HomeComponent } from './home/home.component';
+import { PresentationComponent } from './presentation/presentation.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     QuizComponent,
-    HomeComponent
+    HomeComponent,
+    PresentationComponent
   ],
   imports: [
     BrowserModule,
