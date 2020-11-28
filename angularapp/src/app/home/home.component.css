@@ -1,0 +1,26 @@
+blockquote::before {
+  content: open-quote;
+}
+blockquote::after {
+  content: close-quote;
+}
+blockquote {
+  quotes: "“" "”" "‘" "’";
+  color:darkgoldenrod;
+}
+
+banner{
+  width:100%;
+}
+banner h1{
+  text-align: center;
+}
+
+.action-row{
+  text-align:center;
+  color: darkslategray;
+}
+
+.action-row a{
+
+}

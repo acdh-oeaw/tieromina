@@ -6,7 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'Tieromina | ERN 2020';
+  title = 'Tieromina';
   currentYear=new Date().getFullYear();
 
 }

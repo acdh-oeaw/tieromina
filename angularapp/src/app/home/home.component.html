@@ -1,5 +1,9 @@
 <div class="banner">
-  <h1 class="mat-headline-1">
+  <h1 class="mat-headline-1"  *ngFor="let selectedOmen of examples">
     <blockquote>{{ selectedOmen }}</blockquote>
   </h1>
+</div>
+<div class="action-row">
+  <h1 class="mat-headline-2"> Ancient Mesopotamians wrote down thousands of omens like these in clay tablets. Can you guess their predictions correctly?</h1>
+  <a mat-button router-link="/quiz" href="/quiz" color="primary"><span class="mat-display-1"> Start Quiz!</span></a>
 </div>

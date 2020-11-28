@@ -9,3 +9,7 @@ footer img{
 .contents{
   padding: 2em;
 }
+
+mat-toolbar .mat-flat-button{
+  background:whitesmoke !important;
+}

@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
   introOmens:string[];
-  selectedOmen:string;
+  examples:string[];
   constructor() {
     this.introOmens  = ["If ants bring something from a man's house to a hole – that house will impoverish.",
  'If a snake falls on top of a man who is litigating, but his lawsuit is already dragging on – his lawsuit will be settled.',
@@ -60,7 +60,8 @@ export class HomeComponent implements OnInit {
  'If a lizard that has two tails falls in front of a man – that man will prevail over lit: stand on his opponent.',
  'If a lizard falls on a man – all of his possessions will disappear.'];
 
-    this.selectedOmen = this.introOmens[Math.floor(Math.random() * this.introOmens.length)];
+    this.examples =  this.introOmens.sort(() => Math.random() - Math.random()).slice(0,2);
+
   }
 
   ngOnInit(): void {
