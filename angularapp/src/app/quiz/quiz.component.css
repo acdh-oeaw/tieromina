@@ -50,3 +50,18 @@ mat-expansion-panel-header{
 .apodosis{
   font-style: italic;
 }
+
+
+.mat-list-base .mat-list-item .mat-line {
+  white-space: normal !important;
+}
+
+.mat-list-base .mat-list-item .mat-list-item-content,
+.mat-list-base .mat-list-option .mat-list-item-content {
+  padding: 16px !important;
+}
+
+.mat-list-base .mat-list-item.mat-3-line,
+.mat-list-base .mat-list-option.mat-3-line {
+  height: auto !important;
+}
