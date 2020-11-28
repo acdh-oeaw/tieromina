@@ -1,3 +1,10 @@
+<div #results *ngIf="currentQ>=numQuestions" class="results">
+  <h4 class="mat-display-1"> You scored {{ score }} / {{ numQuestions }}!</h4>
+  <div class="action-row">
+    <button mat-button color="primary" routerLink="/quiz" (click)="restart()">Play Again</button>
+    <button mat-button color="primary"  (click)="learnMore()">See Answers</button>
+  </div>
+</div>
 <div #quiz>
   <mat-accordion multi>
     <mat-expansion-panel [expanded]="currentQ === i" hideToggle  *ngFor="let omen of omens ; let i = index"
@@ -18,11 +25,4 @@
       </mat-action-row>
   </mat-expansion-panel>
   </mat-accordion>
-</div>
-<div #results *ngIf="currentQ>=numQuestions" class="results">
-  <h4 class="mat-display-1"> You scored {{ score }} / {{ numQuestions }}!</h4>
-  <div class="action-row">
-    <button mat-button color="primary"  (click)="learnMore()">Learn More! </button>
-    <button mat-button color="primary" routerLink="/quiz" (click)="restart()">Play Again! </button>
-  </div>
 </div>
